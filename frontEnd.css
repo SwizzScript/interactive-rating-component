@@ -1,0 +1,184 @@
+/* DEFINING THE VARIABLE IN GLOBAL ROOT SELECTOR */
+:root {
+    --headtitle-color: hsl(0, 0%, 100%);
+    --background-color:hsl(216, 12%, 8%);
+    --cartoncard-color:hsl(213, 19%, 18%);
+    --orangebutton-color:hsl(25, 97%, 53%);
+    --primary-text-color:hsl(217, 12%, 63%);
+    --border-radius:12px;
+    --border-radius2:50px;
+
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box
+}
+
+
+html, body {
+ /* USING OR APPLYING THE VARIABLE WITH A VALUE */
+ /* , the other value means fall back value 
+ should in case the variable is not defined 
+ the fall back value will help out */
+ background-color: var(--background-color,black);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.img-card, .result-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    background-color:var(--cartoncard-color);
+    border-radius: var(--border-radius);
+}
+
+.img-card .card-body {
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    flex-wrap: wrap;
+    margin-left:10px;
+}
+
+
+.img-card  .card-body h1{
+    color:var(--headtitle-color);
+}
+.img-card  .card-body p{
+    color:var(--primary-text-color);
+    font-size:15px;
+}
+
+.imagewrapper{
+    width:40px;
+    padding:5px 2px;
+    background-color: var(--cartoncard-color);
+    border-radius: var(--border-radius2);
+    text-align: center;
+    border: 1px solid;
+}
+
+.iamge-star{
+    width:25px;
+}
+
+.numbered-btn {
+    margin: 5px 0;
+    display: flex;
+}
+
+.rounded-btn {
+    text-align: center;
+    border-radius: var(--border-radius2);
+    outline: none;
+    background-color:var(--background-color);
+    color: var(--primary-text-color);
+    cursor: pointer;
+    transition: 3s ease-in-out;
+    border: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin: 0 5px;
+}
+
+.Submit-buttn {
+    border-radius: var(--border-radius2);
+    background-color:var(--orangebutton-color);
+    border: none;
+    outline: none;
+    font-size:12px;
+    font-weight:bolder;
+    color:var(--background-color);
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 1s ease-in ;
+}
+
+#result-card {
+    display: none;
+}  
+
+#cardBody {
+   text-align: center;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   gap:15px;
+}
+
+.card-body h1 {
+    color:var(--headtitle-color);
+}
+
+.card-body p {
+  color: var(--primary-text-color);
+ }
+
+
+.card-body .ratingResult {
+    background-color:var(--background-color);
+    border:1px none;
+    padding:5px 15px;
+    border-radius:var(--border-radius);
+    color:var(--orangebutton-color);
+}
+
+.card-body .updatingRating {
+    background-color:var(--background-color);
+    border:1px none;
+    padding:5px 15px;
+    border-radius:var(--border-radius);
+    color:var(--orangebutton-color);
+}
+
+.rounded-btn:hover {
+    background-color: var(--orangebutton-color);
+}
+
+.Submit-buttn:hover{
+  background-color: #fff;
+}
+
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .img-card {
+        max-width: 100%;
+        margin: 20px;
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .img-card {
+        max-width:100%;
+        padding:10px;
+        left:45%;
+    }
+
+    .img-card  .card-body h1{
+        color:var(--headtitle-color);
+    }
+    .img-card  .card-body p{
+        color:var(--primary-text-color);
+        font-size:10px;
+    }   
+    
+    .Submit-buttn {
+        width:100%;
+    }
+}
